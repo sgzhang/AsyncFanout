@@ -1,9 +1,5 @@
 ## Mongodb Driver Comparision
-Experiments of architecturally different MongoDB driver implementation, including thread-based, 
-asynchronous non-blocking I/O (AIO), and synchronous non-blocking I/O (NIO). Fan-out is a 
-popular and important feature for scaling out database tier, in order to efficiently take
-advantage of such feature, appropriate implementation of middleware (between app servers and
-database servers) should be able to multiplex connections via less overheads.
+AIOBackend application server
 
 #### 1. Experimental Setup
 - MongoDB servers and YCSB workload data  
@@ -16,6 +12,13 @@ database servers) should be able to multiplex connections via less overheads.
 - Client  
 192.168.10.140
 
-#### 2. Versions
-- 2.0 the first reactor thread does NOT block
+#### 2. start up command
+- java MongodbDriverComparison-doublefacenetty-snapshot-v1-all.jar -s d -t 10 -c 10 -p 10
+
+
+>where "s", "Set the type of driver b -- BIO, d -- AIO, c -- Netty";
+      "t", "Set the number of client threads";
+      "c", "Set the connection pool size of each downstream tier server";
+      "p", "Set the time period of experiments [s]";
+      "h", "Lists of help";
 
