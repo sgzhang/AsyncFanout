@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: io.netty.channel.embedded.EmbeddedChannelTest
+-------------------------------------------------------------------------------
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.101 sec - in io.netty.channel.embedded.EmbeddedChannelTest

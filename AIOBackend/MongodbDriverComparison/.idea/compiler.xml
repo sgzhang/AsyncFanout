@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="MongodbDriverComparison.main" target="1.8" />
+      <module name="MongodbDriverComparison.test" target="1.8" />
+      <module name="MongodbDriverComparison_main" target="1.8" />
+      <module name="MongodbDriverComparison_test" target="1.8" />
+      <module name="sync_main" target="1.8" />
+      <module name="sync_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

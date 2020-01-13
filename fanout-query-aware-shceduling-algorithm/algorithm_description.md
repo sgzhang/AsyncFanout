@@ -1,0 +1,5 @@
+![algorithm](https://i.imgur.com/0yUjPlA.jpg)
+
+​	The pseudo-code of our task-aware priority-based scheduling is shown inAlgorithm 1 . First, `DoubleFaceNetty` will maintain a global hashmap to record each client request with a unique ID and its fanout factor (line 1). After `DoubleFaceNetty` performs event monitoring action (line 4), all the events will be grouped by unique request IDs. Second, the client requests with all the events that are present in the current round will be processed first (line 16 to 21). Third, the rest of the events that cannot assemble a complete response for clients in the current *round* will be processed the last (line 27). Finally, we update the hash map with the number of outstanding events for each pending client request to prepare for the next round event handling (line 31).
+
+​	Please refer to our paper to find more results.

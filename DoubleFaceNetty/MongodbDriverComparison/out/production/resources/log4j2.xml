@@ -1,0 +1,149 @@
+<Configuration status="WARN" monitorInterval="300">
+    <properties>
+        <property name="LOG_HOME">logs</property>
+    </properties>
+    <CustomLevels>
+        <!--<CustomLevel  name="console1" intLevel="510" />-->
+        <CustomLevel  name="server1" intLevel="410" />
+        <CustomLevel  name="server2" intLevel="420" />
+        <CustomLevel  name="server3" intLevel="430" />
+        <CustomLevel  name="server4" intLevel="440" />
+        <CustomLevel  name="server5" intLevel="450" />
+    </CustomLevels>
+    <Appenders>
+        <!--<Console name="Console" target="SYSTEM_OUT">-->
+            <!--<Filters>-->
+                <!--<ThresholdFilter level="console1" />-->
+                <!--<ThresholdFilter level="debug" onMatch="Deny" onMismatch="NEUTRAL" />-->
+            <!--</Filters>-->
+            <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />-->
+        <!--</Console>-->
+
+        <RollingRandomAccessFile name="InfoFile"
+                                 fileName="${LOG_HOME}/output.log"
+                                 filePattern="${LOG_HOME}/output-%d{yyyy-MM-dd}-%i.log">
+            <Filters>
+                <ThresholdFilter level="info" />
+                <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL" />
+            </Filters>
+            <!--<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />-->
+            <PatternLayout pattern="%msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="1000MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="server1"
+                                 fileName="${LOG_HOME}/server1.log"
+                                 filePattern="${LOG_HOME}/output-%d{yyyy-MM-dd}-%i.log">
+            <Filters>
+                <ThresholdFilter level="server1" />
+                <ThresholdFilter level="info" onMatch="DENY" onMismatch="NEUTRAL" />
+            </Filters>
+            <!--<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />-->
+            <PatternLayout pattern="%msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="1000MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="server2"
+                                 fileName="${LOG_HOME}/server2.log"
+                                 filePattern="${LOG_HOME}/output-%d{yyyy-MM-dd}-%i.log">
+            <Filters>
+                <ThresholdFilter level="server2" />
+                <ThresholdFilter level="server1" onMatch="DENY" onMismatch="NEUTRAL" />
+            </Filters>
+            <!--<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />-->
+            <PatternLayout pattern="%msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="1000MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="server3"
+                                 fileName="${LOG_HOME}/server3.log"
+                                 filePattern="${LOG_HOME}/output-%d{yyyy-MM-dd}-%i.log">
+            <Filters>
+                <ThresholdFilter level="server3" />
+                <ThresholdFilter level="server2" onMatch="DENY" onMismatch="NEUTRAL" />
+            </Filters>
+            <!--<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />-->
+            <PatternLayout pattern="%msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="1000MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="server4"
+                                 fileName="${LOG_HOME}/server4.log"
+                                 filePattern="${LOG_HOME}/output-%d{yyyy-MM-dd}-%i.log">
+            <Filters>
+                <ThresholdFilter level="server4" />
+                <ThresholdFilter level="server3" onMatch="DENY" onMismatch="NEUTRAL" />
+            </Filters>
+            <!--<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />-->
+            <PatternLayout pattern="%msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="1000MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="server5"
+                                 fileName="${LOG_HOME}/server5.log"
+                                 filePattern="${LOG_HOME}/output-%d{yyyy-MM-dd}-%i.log">
+            <Filters>
+                <ThresholdFilter level="server5" />
+                <ThresholdFilter level="server4" onMatch="DENY" onMismatch="NEUTRAL" />
+            </Filters>
+            <!--<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />-->
+            <PatternLayout pattern="%msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="1000MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingRandomAccessFile>
+
+
+        <RollingRandomAccessFile name="DebugFile"
+                                 fileName="${LOG_HOME}/client.log"
+                                 filePattern="${LOG_HOME}/client-%d{yyyy-MM-dd}-%i.log">
+            <Filters>
+                <ThresholdFilter level="debug" />
+                <ThresholdFilter level="server5" onMatch="DENY" onMismatch="NEUTRAL" />
+            </Filters>
+            <!--<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />-->
+            <PatternLayout pattern="%msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="100MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingRandomAccessFile>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="trace">
+            <!--<AppenderRef ref="Console" />-->
+            <AppenderRef ref="DebugFile" />
+            <AppenderRef ref="InfoFile" />
+            <AppenderRef ref="server1" />
+            <AppenderRef ref="server2" />
+            <AppenderRef ref="server3" />
+            <AppenderRef ref="server4" />
+            <AppenderRef ref="server5" />
+        </Root>
+    </Loggers>
+</Configuration>

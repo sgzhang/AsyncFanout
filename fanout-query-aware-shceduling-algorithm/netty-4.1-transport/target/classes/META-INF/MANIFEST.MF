@@ -1,0 +1,41 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1523656928068
+Build-Jdk: 1.8.0_65
+Built-By: zhang_000
+Bundle-Description: Netty is an asynchronous event-driven network applic
+ ation framework for    rapid development of maintainable high performan
+ ce protocol servers and    clients.
+Bundle-DocURL: http://netty.io/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Netty/Transport
+Bundle-SymbolicName: io.netty.transport
+Bundle-Vendor: The Netty Project
+Bundle-Version: 4.1.20.Final-SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: io.netty.bootstrap;version="4.1.20";uses:="io.netty.chan
+ nel,io.netty.resolver,io.netty.util",io.netty.channel;version="4.1.20";
+ uses:="io.netty.bootstrap,io.netty.buffer,io.netty.util,io.netty.util.c
+ oncurrent",io.netty.channel.embedded;version="4.1.20";uses:="io.netty.c
+ hannel",io.netty.channel.group;version="4.1.20";uses:="io.netty.channel
+ ,io.netty.util.concurrent",io.netty.channel.internal;version="4.1.20",i
+ o.netty.channel.local;version="4.1.20";uses:="io.netty.channel",io.nett
+ y.channel.nio;version="4.1.20";uses:="io.netty.buffer,io.netty.channel,
+ io.netty.util,io.netty.util.concurrent",io.netty.channel.oio;version="4
+ .1.20";uses:="io.netty.buffer,io.netty.channel",io.netty.channel.pool;v
+ ersion="4.1.20";uses:="io.netty.bootstrap,io.netty.channel,io.netty.uti
+ l.concurrent",io.netty.channel.socket;version="4.1.20";uses:="io.netty.
+ buffer,io.netty.channel,io.netty.util",io.netty.channel.socket.nio;vers
+ ion="4.1.20";uses:="io.netty.buffer,io.netty.channel,io.netty.channel.n
+ io,io.netty.channel.socket",io.netty.channel.socket.oio;version="4.1.20
+ ";uses:="io.netty.buffer,io.netty.channel,io.netty.channel.oio,io.netty
+ .channel.socket"
+Import-Package: io.netty.buffer;version="[4.1,5)",io.netty.resolver;vers
+ ion="[4.1,5)",io.netty.util;version="[4.1,5)",io.netty.util.concurrent;
+ version="[4.1,5)",io.netty.util.internal;version="[4.1,5)",io.netty.uti
+ l.internal.logging;version="[4.1,5)",sun.nio.ch;resolution:=optional,or
+ g.eclipse.jetty.npn;version="[1,2)";resolution:=optional,org.eclipse.je
+ tty.alpn;version="[1,2)";resolution:=optional
+Originally-Created-By: Apache Maven Bundle Plugin
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-2.4.1.201501161923
